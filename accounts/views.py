@@ -19,7 +19,7 @@ def loginView(request):
         else:
             messages.info(request, 'Username or password is incorrect')
 
-    return render(request, 'login.html')
+    return render(request, 'accounts/login.html')
 
 
 def register(request):
@@ -33,4 +33,4 @@ def register(request):
             user.groups.add(group)
             messages.success(request, 'Account was created for ' + username)
             return redirect('/accounts/login')
-    return render(request, 'register.html', context={'form': form})
+    return render(request, 'accounts/register.html', context={'form': form})
