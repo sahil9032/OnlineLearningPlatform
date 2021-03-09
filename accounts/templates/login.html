@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <div class="login-card"><img class="profile-img-card" src="{% static 'img/avatar_2x.png' %}">
+        <p class="profile-name-card"></p>
+        <form class="form-signin" method="post">
+            {% csrf_token %}
+            <input class="form-control" type="text" name="username" required placeholder="Username" autofocus>
+            <input class="form-control" type="password" name="password" required placeholder="Password">
+            <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+        </form>
+        {% for message in messages %}
+            <p class="text-danger" id="messages">{{ message }}</p>
+        {% endfor %}
+    </div><!-- End: Google Style Login -->
+{% endblock %}

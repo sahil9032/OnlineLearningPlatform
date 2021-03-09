@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <section class="register-photo">
+        <!-- Start: Form Container -->
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group">Username: {{ form.username }}</div>
+                <div class="form-group">Email: {{ form.email }}</div>
+                <div class="form-group">Password: {{ form.password1 }}</div>
+                <div class="form-group">Confirm password: {{ form.password2 }}</div>
+                <div class="form-group">Sign up as: {{ form.role }}</div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                </div>
+                <div class="form-group">
+                    <div class="text-danger">
+                        {{ form.errors }}
+                    </div>
+                </div>
+                <a class="already" href="#">You already have an account? Login here.</a>
+            </form>
+        </div><!-- End: Form Container -->
+    </section><!-- End: Registration Form with Photo -->
+    <script>
+
+        var form_fields = document.getElementsByTagName('input')
+        for (var i = 1; i < 5; i++) {
+            form_fields[i].className += ' form-control'
+        }
+    </script>
+{% endblock %}
