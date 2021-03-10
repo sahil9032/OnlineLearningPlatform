@@ -15,7 +15,7 @@ def loginView(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('/teacher')
         else:
             messages.info(request, 'Username or password is incorrect')
 

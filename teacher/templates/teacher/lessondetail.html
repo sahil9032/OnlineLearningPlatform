@@ -1,0 +1,38 @@
+{% extends 'teacher/main.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">{{ lesson.title }}</h1>
+        <div class="text-center">
+            <label for="quality">Select Video Quality: </label>
+            <select id="quality" onchange="changeSrc()">
+                <option value="{{ lesson.video_720p }}" selected>720p</option>
+                <option value="{{ lesson.video_480p }}">480p</option>
+                <option value="{{ lesson.video_360p }}">360p</option>
+                <option value="{{ lesson.video_240p }}">240p</option>
+                <option value="{{ lesson.video_144p }}">144p</option>
+            </select>
+        </div>
+        <video id="myVideo" class="container" controls>
+            <source src="{{ lesson.video_720p }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div id="description" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders">
+        </div>
+        <div id="dummyElement" style="display: none;">
+            {{ lesson.content }}
+        </div>
+    </div>
+    <script>
+        var vid = document.getElementById("myVideo");
+
+        function changeSrc() {
+            var time = vid.currentTime;
+            var sources = vid.getElementsByTagName('source');
+            sources[0].src = document.getElementById("quality").value;
+            vid.load();
+            vid.currentTime = time;
+            vid.play();
+        }
+        document.getElementById('description').innerHTML = document.getElementById('dummyElement').innerText;
+    </script>
+{% endblock %}

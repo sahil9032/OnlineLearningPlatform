@@ -20,3 +20,4 @@ def allowed_users(allowed_roles=None):
         return wrapper_func
 
     return decorator
+

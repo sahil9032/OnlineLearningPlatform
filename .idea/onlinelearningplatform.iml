@@ -22,6 +22,11 @@
     <orderEntry type="library" name="ionicons" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="ckeditor" level="application" />
+    <orderEntry type="library" name="material-components-web" level="application" />
+    <orderEntry type="library" name="material.indigo-blue" level="application" />
+    <orderEntry type="library" name="material" level="application" />
+    <orderEntry type="library" name="video-js" level="application" />
+    <orderEntry type="library" name="video" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

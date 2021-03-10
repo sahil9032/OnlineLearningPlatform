@@ -1,0 +1,32 @@
+{% extends 'teacher/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="card" style="width: 100%;">
+            <img class="card-img-top"
+                 src="https://www.gstatic.com/classroom/themes/img_backtoschool.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ course.title }}</h5>
+                <p class="card-text">
+                    {{ course.description }}
+                </p>
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn" href="/teacher/course/{{ course.id }}/add/lesson/"><span class="material-icons"
+                                                                                    style="vertical-align: -6px;">add_circle</span>Add
+                Lesson</a>
+            <a class="btn"><span class="material-icons" style="vertical-align: -6px;">assignment</span>Add
+                Assignment</a>
+        </div>
+        {% for i in lessons %}
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <a href="/teacher/course/{{ course.id }}/lesson/{{ i.id }}">Open</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

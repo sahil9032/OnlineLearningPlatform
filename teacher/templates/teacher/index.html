@@ -1,0 +1,24 @@
+{% extends 'teacher/main.html' %}
+{% load static %} }}
+{% block content %}
+    <div class="container">
+        <br/>
+        {% for i in courses %}
+            <div class="card" style="width: 18rem;" onclick="redirect({{ i.id }})">
+                <img class="card-img-top"
+                     src="{% static 'img/img_backtoschool.jpg' %}"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    {{ i.description }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function redirect(id) {
+            window.location.href = '/teacher/course/' + id;
+        }
+    </script>
+{% endblock %}
