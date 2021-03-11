@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Online Learning Platform</title>
+    <link rel="icon" href="{% static 'img/India-Flag.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Start: gradient-navbar -->
+<nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><i class="icon ion-ios-infinite" id="brand-logo"></i></a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'studentindex' %}">Your Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'enroll' %}">Enroll in course</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- End: gradient-navbar -->
+{% block content %}
+{% endblock %}
+<!-- Start: Corporate Footer Clean -->
+<footer class="page-footer">
+    <div class="container">
+        <p>Online Learning Platform</p>
+        <hr>
+        <div class="footer-legal">
+            <div class="float-md-right region"><a href="#"><img src="{% static 'img/India-Flag.png' %}"
+                                                                alt="India flag">India</a></div>
+            <div class="d-inline-block copyright">
+                <p class="d-inline-block">Copyright © 2021. All rights reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer><!-- End: Corporate Footer Clean -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

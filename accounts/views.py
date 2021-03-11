@@ -15,6 +15,9 @@ def loginView(request):
 
         if user is not None:
             login(request, user)
+            group = user.groups.all()[0].name
+            if group == 'student':
+                return redirect('/student')
             return redirect('/teacher')
         else:
             messages.info(request, 'Username or password is incorrect')

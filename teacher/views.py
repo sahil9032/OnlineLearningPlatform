@@ -26,8 +26,8 @@ def upload_blob(source_file_name, destination_blob_name):
     blob.upload_from_filename(source_file_name)
 
 
-def validator(request, course):
-    course = Course.objects.filter(id=course)
+def validator(request, courseid):
+    course = Course.objects.filter(id=courseid)
     if course is None or course.count() == 0:
         return False, HttpResponseNotFound('<h1>Page not found</h1>')
     course = course[0]
@@ -87,7 +87,8 @@ def addLesson(request, courseid):
         form = AddLessonForm({'title': request.POST['title'], 'content': request.POST['content']}, request.FILES)
         if form.is_valid():
             key = str(uuid.uuid4())
-            filename = key + request.FILES['file'].name
+            filename = request.FILES['file'].name
+            filename = key + '.' + list(map(str, filename.split('.')))[-1]
             file = request.FILES['file'].read()
             location = os.path.join(str(settings.BASE_DIR), 'tmp')
             location = os.path.join(location, filename)
@@ -126,6 +127,6 @@ def getLessonDetail(request, courseid, lessonid):
     if not valid:
         return response
     lesson = Lesson.objects.filter(id=lessonid)
-    if lesson is None or lesson.count() == 0:
+    if lesson is None or lesson.count() == 0 or str(lesson[0].course.id) != courseid:
         return HttpResponseNotFound('<h1>Page not found</h1>')
     return render(request, 'teacher/lessondetail.html', context={'lesson': lesson[0]})
