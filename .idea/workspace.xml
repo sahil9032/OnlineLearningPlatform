@@ -2,168 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49c05750-aa88-46b6-9581-999efdff4d23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/autocomplete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/changelists.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/nav_sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/responsive_rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/css/widgets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/fonts/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/fonts/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/calendar-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/gis/move_vertex_off.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/gis/move_vertex_on.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-addlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-alert.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-calendar.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-changelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-deletelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-no.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-unknown-alt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-unknown.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-viewlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/icon-yes.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/inline-delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/selector-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/sorting-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/tooltag-add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/img/tooltag-arrowright.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/SelectBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/SelectFilter2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/actions.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/autocomplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/cancel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/change_form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/collapse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/collapse.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/inlines.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/inlines.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/jquery.init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/nav_sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/popup_response.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/prepopulate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/prepopulate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/prepopulate_init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/urlify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/select2.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/styles.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/India-Flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/add-black-18dp.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/avatar_2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/img_backtoschool.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/meeting.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/templates/student/coursedetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/templates/student/enroll.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/templates/student/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/templates/student/lessondetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/templates/student/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/onlinelearningplatform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/onlinelearningplatform.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinelearningplatform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinelearningplatform/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinelearningplatform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinelearningplatform/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teacher/templates/teacher/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/templates/teacher/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teacher/templates/teacher/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/templates/teacher/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teacher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/teacher/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/student/templates/student" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -206,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\onlinelearningplatform" />
       <recent name="E:\onlinelearningplatform\student\templates\student" />
       <recent name="E:\onlinelearningplatform\static\img" />
       <recent name="E:\onlinelearningplatform\teacher\templates" />
