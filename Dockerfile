@@ -3,6 +3,8 @@ FROM python:3.7
 RUN  apt-get update \
     && apt install -y ffmpeg
 
+ENV PATH="/usr/bin/ffmpeg:/usr/share/ffmpeg:${PATH}"
+
 
 WORKDIR /usr/src/app
 COPY requirements.txt ./
