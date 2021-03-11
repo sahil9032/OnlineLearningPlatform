@@ -9,6 +9,6 @@ def convert(in_path, out_path, height):
            'libx264', '-preset', 'fast', '-c:a', 'copy', out_path]
     cmd = ' '.join(cmd)
     p = subprocess.Popen(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE, cwd=os.path.join(
-        settings.BASE_DIR, 'tmp'))
+        settings.BASE_DIR, 'tmp'), shell=True)
     output, error = p.communicate()
     return p.returncode
