@@ -10,20 +10,33 @@ from accounts.models import *
 from onlinelearningplatform import settings
 from teacher.decorators import allowed_users
 from teacher.forms import CreateCourseForm, AddLessonForm
-from tmp.convert import convert
-
-resolution = ['720', '480', '360', '240', '144']
-Link = 'https://storage.googleapis.com/e-learning-2a88b.appspot.com/'
-
-from google.cloud import storage
 
 
-def upload_blob(source_file_name, destination_blob_name):
-    storage_client = storage.Client.from_service_account_json('keys.json')
-    bucket = storage_client.bucket('e-learning-2a88b.appspot.com')
-    blob = bucket.blob(destination_blob_name)
+def upload(filename, location):
+    from pydrive.auth import GoogleAuth
+    from pydrive.drive import GoogleDrive
 
-    blob.upload_from_filename(source_file_name)
+    gauth = GoogleAuth()
+    gauth.LoadCredentialsFile("credentials.txt")
+    if gauth.credentials is None:
+        gauth.LocalWebserverAuth()
+    elif gauth.access_token_expired:
+        gauth.Refresh()
+    else:
+        gauth.Authorize()
+    gauth.SaveCredentialsFile("credentials.txt")
+    drive = GoogleDrive(gauth)
+    f = drive.CreateFile({
+        'title': filename,
+        'parents': [{
+            'kind': 'drive#fileLink',
+            'teamDriveId': '0ADLW2N9qutC2Uk9PVA',
+            'id': '1kt6SGM89ixO325jHI6E5PLeIHQRu-0P0'
+        }]
+    })
+    f.SetContentFile(location)
+    f.Upload(param={'supportsTeamDrives': True})
+    return f['embedLink']
 
 
 def validator(request, courseid):
@@ -89,32 +102,17 @@ def addLesson(request, courseid):
             key = str(uuid.uuid4())
             filename = request.FILES['file'].name
             filename = key + '.' + list(map(str, filename.split('.')))[-1]
-            file = request.FILES['file'].read()
             location = os.path.join(str(settings.BASE_DIR), 'tmp')
             location = os.path.join(location, filename)
+            file = request.FILES['file'].read()
             with open(location, 'wb') as temp_file:
                 temp_file.write(file)
-            outputs = []
-            uploads = []
-            for i in resolution:
-                outputs.append(key + '_' + i + '.mp4')
-            for i in range(len(outputs)):
-                if convert(filename, outputs[i], resolution[i]) == 0:
-                    path = os.path.join(str(settings.BASE_DIR), 'tmp')
-                    path = os.path.join(path, outputs[i])
-                    uploads.append([path, outputs[i]])
+            embedLink = upload(filename, location)
             os.remove(location)
-            for i in uploads:
-                upload_blob(i[0], i[1])
-                os.remove(i[0])
             lesson = Lesson(title=request.POST['title'],
                             content=request.POST['content'],
                             course_id=courseid,
-                            video_720p=Link + key + '_' + '720.mp4',
-                            video_480p=Link + key + '_' + '480.mp4',
-                            video_360p=Link + key + '_' + '360.mp4',
-                            video_240p=Link + key + '_' + '240.mp4',
-                            video_144p=Link + key + '_' + '144.mp4', )
+                            videoPath=embedLink)
             lesson.save()
             return redirect('/teacher/course/' + courseid)
     return render(request, 'teacher/addlesson.html', context={'form': form})

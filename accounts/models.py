@@ -18,11 +18,7 @@ class Lesson(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, null=False)
     title = models.CharField(max_length=200, null=False)
     content = models.CharField(max_length=100000, null=False)
-    video_720p = models.CharField(max_length=200, null=False)
-    video_480p = models.CharField(max_length=200, null=False)
-    video_360p = models.CharField(max_length=200, null=False)
-    video_240p = models.CharField(max_length=200, null=False)
-    video_144p = models.CharField(max_length=200, null=False)
+    videoPath = models.CharField(max_length=200, null=False, default="")
 
     def __str__(self):
         return self.title

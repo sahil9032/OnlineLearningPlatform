@@ -23,10 +23,8 @@ Install required packages
 pip install -r requirements.txt
 ```
 
-Get service account for [Google Cloud Storage](https://cloud.google.com/storage/docs/getting-service-agent). Make bucket
-public. Place json key file in the root of the folder.
-
-Change Bucket name, public url and json filename in /teacher/views.py line no 23, 16, 22 respectively.
+Enable Google Drive API from [here](https://developers.google.com/drive/api/v3/enable-drive-api) and download
+client-secrets.json file. Change Team Drive Id and Folder Id accordingly in /teacher/views.py file.
 
 Run following command.
 

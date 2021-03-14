@@ -43,7 +43,7 @@ def enrollInCourse(request):
     available_courses = courses.difference(enrolled_courses)
     if request.method == 'POST':
         for course in enrolled_courses:
-            if course.course_id == request.POST['course_id']:
+            if course.id == request.POST['course_id']:
                 messages.info(request, 'You\'re already enrolled in course.')
         else:
             enrollment = Enrollment(course_id=request.POST['course_id'], user_id=request.user.id)
