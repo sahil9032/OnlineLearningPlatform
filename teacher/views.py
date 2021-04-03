@@ -1,42 +1,43 @@
-import os
-import uuid as uuid
+import django
 
+django.setup()
+import base64
+import os
+import shutil
+import uuid as uuid
+from multiprocessing import Process
+
+import ffmpeg_streaming
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseNotFound, HttpResponse
 from django.shortcuts import redirect, render
+from google.cloud import storage
 
 from accounts.models import *
 from onlinelearningplatform import settings
 from teacher.decorators import allowed_users
 from teacher.forms import CreateCourseForm, AddLessonForm
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(str(settings.BASE_DIR), 'keys.json')
 
-def upload(filename, location):
-    from pydrive.auth import GoogleAuth
-    from pydrive.drive import GoogleDrive
 
-    gauth = GoogleAuth()
-    gauth.LoadCredentialsFile("credentials.txt")
-    if gauth.credentials is None:
-        gauth.LocalWebserverAuth()
-    elif gauth.access_token_expired:
-        gauth.Refresh()
-    else:
-        gauth.Authorize()
-    gauth.SaveCredentialsFile("credentials.txt")
-    drive = GoogleDrive(gauth)
-    f = drive.CreateFile({
-        'title': filename,
-        'parents': [{
-            'kind': 'drive#fileLink',
-            'teamDriveId': '0ADLW2N9qutC2Uk9PVA',
-            'id': '1kt6SGM89ixO325jHI6E5PLeIHQRu-0P0'
-        }]
-    })
-    f.SetContentFile(location)
-    f.Upload(param={'supportsTeamDrives': True})
-    return f['embedLink']
+def upload_blob(bucket_name, source_file_name, destination_blob_name):
+    storage_client = storage.Client().from_service_account_json('keys.json')
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(destination_blob_name)
+    blob.upload_from_filename(source_file_name)
+
+
+def upload(filename, location1, location2, key):
+    video = ffmpeg_streaming.input(location2)
+    hls = video.hls(ffmpeg_streaming.Formats.h264())
+    hls.auto_generate_representations()
+    hls.output(os.path.join(os.path.join(location1, key), 'master.m3u8'))
+    os.remove(location2)
+    for file in os.listdir(os.path.join(location1, key)):
+        upload_blob('e-learning-2a88b.appspot.com', os.path.join(os.path.join(location1, key), file), key + '/' + file)
+    shutil.rmtree(os.path.join(location1, key))
 
 
 def validator(request, courseid):
@@ -102,13 +103,18 @@ def addLesson(request, courseid):
             key = str(uuid.uuid4())
             filename = request.FILES['file'].name
             filename = key + '.' + list(map(str, filename.split('.')))[-1]
-            location = os.path.join(str(settings.BASE_DIR), 'tmp')
-            location = os.path.join(location, filename)
-            file = request.FILES['file'].read()
-            with open(location, 'wb') as temp_file:
-                temp_file.write(file)
-            embedLink = upload(filename, location)
-            os.remove(location)
+            location1 = os.path.join(str(settings.BASE_DIR), 'tmp')
+            location2 = os.path.join(location1, filename)
+            file = request.FILES['file']
+            with open(location2, 'wb+') as temp_file:
+                for chunk in file.chunks():
+                    temp_file.write(chunk)
+            p = Process(target=upload, args=(filename, location1, location2, key))
+            p.start()
+            message = 'https://storage.googleapis.com/e-learning-2a88b.appspot.com/' + key + '/master.m3u8'
+            message_bytes = message.encode('ascii')
+            encode = str(base64.b64encode(message_bytes))
+            embedLink = 'https://andhaetg.github.io/universalplyr/player.html?' + encode[2:len(encode) - 1]
             lesson = Lesson(title=request.POST['title'],
                             content=request.POST['content'],
                             course_id=courseid,

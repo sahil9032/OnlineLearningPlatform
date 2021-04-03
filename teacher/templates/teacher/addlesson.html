@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="container">
-        <form method="post" enctype="multipart/form-data">
+        <form id="form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label for="id_title">Title</label><br/>
