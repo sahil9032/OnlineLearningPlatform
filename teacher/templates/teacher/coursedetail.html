@@ -17,8 +17,11 @@
             <a class="btn" href="/teacher/course/{{ course.id }}/add/lesson/"><span class="material-icons"
                                                                                     style="vertical-align: -6px;">add_circle</span>Add
                 Lesson</a>
-            <a class="btn"><span class="material-icons" style="vertical-align: -6px;">assignment</span>Add
+            <a class="btn" href="/teacher/course/{{ course.id }}/add/assignment/"><span class="material-icons"
+                                                                                        style="vertical-align: -6px;">assignment</span>Add
                 Assignment</a>
+            <a class="btn" href="/teacher/course/{{ course.id }}/students"><span class="material-icons"
+                                                                                        style="vertical-align: -6px;">account_circle</span>My Student</a>
         </div>
         {% for i in lessons %}
             <div class="card" style="width: 100%;">
@@ -27,6 +30,17 @@
                     <a href="/teacher/course/{{ course.id }}/lesson/{{ i.id }}">Open</a>
                 </div>
             </div>
+            <br/>
+        {% endfor %}
+        <hr/>
+        {% for i in assignment %}
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <a href="/teacher/course/{{ course.id }}/assignment/{{ i.id }}">Open</a>
+                </div>
+            </div>
+            <br/>
         {% endfor %}
     </div>
 {% endblock %}

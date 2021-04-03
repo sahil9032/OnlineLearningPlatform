@@ -1,4 +1,4 @@
-{% extends 'student/main.html' %}
+{% extends 'teacher/main.html' %}
 {% load static %}
 {% block content %}
     <div class="container">
@@ -13,22 +13,12 @@
                 </p>
             </div>
         </div>
-        <br/>
-        {% for i in lessons %}
-            <div class="card" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ i.title }}</h5>
-                    <a href="/student/course/{{ course.id }}/lesson/{{ i.id }}">Open</a>
-                </div>
-            </div>
-            <br/>
-        {% endfor %}
         <hr/>
-        {% for i in assignment %}
+        {% for i in students %}
             <div class="card" style="width: 100%;">
                 <div class="card-body">
-                    <h5 class="card-title">{{ i.title }}</h5>
-                    <a href="/student/course/{{ course.id }}/assignment/{{ i.id }}">Open</a>
+                    <h5 class="card-title">{{ i.username }}</h5>
+                    <a href="mailto:{{ i.email }}">Email</a>
                 </div>
             </div>
             <br/>

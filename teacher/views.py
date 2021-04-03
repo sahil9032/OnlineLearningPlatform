@@ -17,7 +17,7 @@ from google.cloud import storage
 from accounts.models import *
 from onlinelearningplatform import settings
 from teacher.decorators import allowed_users
-from teacher.forms import CreateCourseForm, AddLessonForm
+from teacher.forms import CreateCourseForm, AddLessonForm, AddAssignmentForm
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(str(settings.BASE_DIR), 'keys.json')
 
@@ -87,7 +87,9 @@ def getCourseDetail(request, courseid):
         return response
     course = response
     lessons = course.lesson_set.all()
-    return render(request, 'teacher/coursedetail.html', context={'course': course, 'lessons': lessons})
+    assignment = course.assignment_set.all()
+    return render(request, 'teacher/coursedetail.html',
+                  context={'course': course, 'lessons': lessons, 'assignment': assignment})
 
 
 @login_required(login_url='/accounts/login')
@@ -134,3 +136,48 @@ def getLessonDetail(request, courseid, lessonid):
     if lesson is None or lesson.count() == 0 or str(lesson[0].course.id) != courseid:
         return HttpResponseNotFound('<h1>Page not found</h1>')
     return render(request, 'teacher/lessondetail.html', context={'lesson': lesson[0]})
+
+
+@login_required(login_url='/accounts/login')
+@allowed_users(allowed_roles=['teacher'])
+def addAssignment(request, courseid):
+    valid, response = validator(request, courseid)
+    if not valid:
+        return response
+    form = AddAssignmentForm()
+    if request.method == 'POST':
+        form = AddAssignmentForm({'title': request.POST['title'], 'content': request.POST['content']})
+        if form.is_valid():
+            assignment = Assignment(title=request.POST['title'],
+                                    content=request.POST['content'],
+                                    course_id=courseid)
+            assignment.save()
+            return redirect('/teacher/course/' + courseid)
+    return render(request, 'teacher/addassignment.html', context={'form': form})
+
+
+@login_required(login_url='/accounts/login')
+@allowed_users(allowed_roles=['teacher'])
+def getAssignmentDetail(request, courseid, assignmentid):
+    valid, response = validator(request, courseid)
+    if not valid:
+        return response
+    assignment = Assignment.objects.filter(id=assignmentid)
+    if assignment is None or assignment.count() == 0 or str(assignment[0].course.id) != courseid:
+        return HttpResponseNotFound('<h1>Page not found</h1>')
+    assignment = assignment[0]
+    submissions = assignment.submission_set.all()
+    return render(request, 'teacher/assignmentdetail.html',
+                  context={'assignment': assignment, 'submissions': submissions, 'course': valid})
+
+
+@login_required(login_url='/accounts/login')
+@allowed_users(allowed_roles=['teacher'])
+def getStudentDetail(request, courseid):
+    valid, response = validator(request, courseid)
+    if not valid:
+        return response
+    course = response
+    enrollments = course.enrollment_set.values_list('user_id')
+    students = User.objects.filter(pk__in=enrollments)
+    return render(request, 'teacher/students.html', context={'students': students, 'course': course})

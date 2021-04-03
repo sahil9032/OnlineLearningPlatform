@@ -11,6 +11,11 @@ class CreateCourseForm(ModelForm):
         fields = ['title', 'description', 'created_by']
 
 
+class AddAssignmentForm(forms.Form):
+    title = forms.CharField(max_length=200)
+    content = forms.CharField(max_length=10000)
+
+
 class AddLessonForm(forms.Form):
     title = forms.CharField(max_length=200)
     file = forms.FileField(validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mkv'])])
